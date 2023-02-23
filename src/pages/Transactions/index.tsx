@@ -11,7 +11,7 @@ import { PriceHiglight, TransactionsContainer, TransactionsTable } from "./style
 export function Transactions() {
   const {transactions} = useContext(TransactionsContext)
 
-  return (
+  return (  
     <div>
       <Header />
       <Summary />
