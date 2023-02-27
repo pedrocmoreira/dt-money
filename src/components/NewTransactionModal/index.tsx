@@ -1,8 +1,15 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
+import { z } from "zod";
 
 import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from "./styles";
 
+const newTransactionFormSchema = z.object({
+  description: z.string(),
+  price: z.number(),
+  category: z.string(),
+  type: z.enum(['income', 'outcome']),
+})
 
 export function NewTransactionModal() {
   return (
